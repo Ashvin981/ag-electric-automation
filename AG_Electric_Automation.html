@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AG Electric & Automation | Authorized Electrical Distributor & Wholesale Supplier</title>
+<meta name="description" content="AG Electric & Automation is a trusted wholesale distributor of premium electrical products, automation solutions, and industrial supplies serving contractors, businesses, and homeowners.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{
+    --navy:#0F172A;
+    --navy-soft:#16213A;
+    --red:#C62828;
+    --red-deep:#9E1E1E;
+    --blue:#1565C0;
+    --blue-deep:#0D47A1;
+    --ice:#F8FAFC;
+    --line:#E5E7EB;
+    --ink:#1E293B;
+    --green:#16A34A;
+    --white:#FFFFFF;
+  }
+  *{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif; color:var(--ink); background:var(--white); overflow-x:hidden;}
+  h1,h2,h3,h4,.font-display{font-family:'Poppins',sans-serif;}
+  .eyebrow{font-family:'Inter',sans-serif; letter-spacing:.18em; text-transform:uppercase; font-size:.8rem; font-weight:600;}
+
+  /* Section flag styles for prominent sub-headings */
+  .section-flag{display:inline-flex;align-items:center;gap:.8rem;padding:.45rem .9rem;border-radius:999px;border:1px solid rgba(14,20,33,.04);box-shadow:0 6px 20px -12px rgba(15,23,42,.06);}
+  .section-flag .tri-bullet{width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:12px solid var(--red);transform:none;margin:0}
+  .section-flag--primary{background:linear-gradient(90deg, rgba(255,107,91,0.12), rgba(198,40,40,0.04));border-color:rgba(198,40,40,0.08);}
+  .section-flag--muted{background:linear-gradient(90deg, rgba(21,101,192,0.10), rgba(3,169,244,0.03));border-color:rgba(21,101,192,0.08);}
+  .section-flag--primary .tri-bullet{border-bottom-color:var(--red);} 
+  .section-flag--muted .tri-bullet{border-bottom-color:var(--blue);} 
+  .section-flag{transition:transform .28s ease, box-shadow .28s ease;}
+  .section-flag:hover{transform:translateY(-4px); box-shadow:0 18px 40px -18px rgba(2,6,23,.12);} 
+  .section-title{font-family:'Poppins',sans-serif;font-weight:800;letter-spacing:.06em;text-transform:none;font-size:18px;color:var(--navy); position:relative; display:inline-block; padding-bottom:6px}
+  .section-title::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-6px;width:54%;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--red),#FF6B5B);opacity:.18}
+  .section-title .accent{background:linear-gradient(90deg,var(--red),#FF6B5B);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .section-sub{margin-top:.6rem;font-size:15px;color:#51627a}
+
+  .feature-heading{
+    display:block; margin-bottom:0.7rem; font-weight:800; font-family:'Poppins',sans-serif;
+    color:var(--navy); letter-spacing:-0.02em; font-size:1.05em;
+  }
+  .feature-highlight{
+    display:inline-block; position:relative; color:var(--navy); font-weight:700;
+    padding:0.04em 0.18em; border-radius:0.35rem; transition:all .25s ease;
+    background:linear-gradient(120deg, rgba(198,40,40,.08), rgba(21,101,192,.08));
+    box-shadow:inset 0 0 0 1px rgba(15,23,42,.04);
+  }
+  .feature-highlight::after{
+    content:''; position:absolute; left:0.18em; right:0.18em; bottom:0.08em; height:0.18em;
+    background:linear-gradient(90deg, rgba(198,40,40,.30), rgba(255,107,91,.18));
+    border-radius:999px; transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+    z-index:-1;
+  }
+  .feature-highlight:hover{
+    color:var(--red); transform:translateY(-1px);
+  }
+  .feature-highlight:hover::after{transform:scaleX(1);}
+
+  /* subtle entrance for section titles */
+  .section-flag .section-title{transform:translateY(6px); opacity:0; transition:transform .5s cubic-bezier(.2,.9,.2,1), opacity .45s ease}
+  .reveal.in-view .section-flag .section-title{transform:none; opacity:1}
+
+
+  /* ---- signature diagonal / triangular motif, echoing the AG pyramid mark ---- */
+  .diagonal-cut{clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);}
+  .diagonal-cut-rev{clip-path: polygon(0 12%, 100% 0, 100% 100%, 0 100%);}
+  .tri-bullet{display:inline-block; width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:10px solid var(--red); margin-right:.55rem; transform:translateY(-1px);}
+  .tri-divider{width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:14px solid currentColor;}
+
+  .current-line{stroke-dasharray: 900; stroke-dashoffset: 900; animation: draw 2.4s ease-out .3s forwards;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+
+  .reveal{opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in-view{opacity:1; transform:translateY(0);}
+  .reveal-delay-1{transition-delay:.08s;}
+  .reveal-delay-2{transition-delay:.16s;}
+  .reveal-delay-3{transition-delay:.24s;}
+  .reveal-delay-4{transition-delay:.32s;}
+
+  .card-lift{transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;}
+  .card-lift:hover{transform:translateY(-6px); box-shadow:0 24px 48px -18px rgba(15,23,42,.18); border-color:var(--red);}
+
+  .brand-chip{transition:transform .32s ease, box-shadow .32s ease; background:#fff}
+  .brand-chip:hover{transform:translateY(-4px) scale(1.02); box-shadow:0 18px 40px -18px rgba(15,23,42,.18);} 
+  .brand-chip img{transition:transform .35s ease, opacity .25s ease; display:block; max-width:100%;}
+  .brand-chip:hover img{transform:scale(1.06);} 
+  .brand-chip{cursor:pointer;border-radius:12px; min-height:104px}
+  .brand-chip:focus{outline:3px solid rgba(21,101,192,.12); outline-offset:6px; transform:translateY(-3px) scale(1.02);} 
+  /* image area style to make logos appear on a soft panel */
+  .brand-chip .logo-wrap{background:var(--ice); height:76px; display:flex; align-items:center; justify-content:center; padding:14px}
+  .brand-chip img{transition:transform .35s ease, opacity .25s ease; display:block; max-width:88%; max-height:52px; object-fit:contain}
+  .brand-name{font-size:11px !important; line-height:1.2 !important;}
+  .brand-badge{display:inline-flex; align-items:center; gap:.32rem; padding:.12rem .38rem; border-radius:999px; font-weight:700; font-size:9px}
+
+  /* Normalize brand badge sizing and alignment so it doesn't overflow */
+  .brand-badge{
+    padding:4px 7px !important;
+    font-size:8.9px !important;
+    gap:4px !important;
+    height:18px;
+    line-height:1;
+    align-items:center;
+    display:inline-flex;
+    border-radius:999px;
+    box-shadow:none;
+    white-space:nowrap;
+    max-width:100px;
+    justify-content:center;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    flex:0 0 auto;
+  }
+  .brand-chip .px-3.py-3{padding:0.55rem 0.7rem !important;}
+  .brand-chip{min-height:120px;}
+  .brand-badge svg{width:14px; height:14px; flex:0 0 14px;}
+  /* ensure the card's content area shows the badge correctly */
+  .brand-chip .px-5{padding-left:1.25rem !important; padding-right:1.75rem !important; min-width:0}
+  .brand-chip .px-5 .brand-badge{margin-left:auto; flex:0 0 auto}
+  .brand-badge .badge-text{display:inline-block}
+  .brand-name{min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; display:inline-block}
+
+  /* collapse badge text on small viewports to avoid overflow */
+  @media (max-width:640px){
+    .brand-badge{max-width:44px; padding:6px 8px; font-size:11px}
+    .brand-badge .badge-text{display:none}
+    .brand-chip .px-5{padding-right:0.75rem !important}
+  }
+
+  /* Modal / lightbox for brand details */
+  #brand-modal{position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(2,6,23,.6); z-index:9999;}
+  #brand-modal.show{display:flex}
+  #brand-modal .modal-card{background:#fff; border-radius:12px; padding:20px; max-width:720px; width:92%; box-shadow:0 30px 80px -30px rgba(2,6,23,.6);}
+  #brand-modal .modal-card img{max-width:280px; max-height:160px; width:auto; height:auto; display:block; margin:0 auto 12px auto}
+  #brand-modal .modal-card h3{margin:0 0 6px 0; text-align:center}
+  #brand-modal .modal-close{position:absolute; right:20px; top:20px; background:transparent; border:none; color:#fff; font-size:22px; cursor:pointer}
+
+  .btn-primary{background:var(--red); transition:background .25s ease, transform .2s ease;}
+  .btn-primary:hover{background:var(--red-deep); transform:translateY(-2px);}
+  .btn-outline{border:1.5px solid rgba(255,255,255,.5); transition:background .25s ease, border-color .25s ease;}
+  .btn-outline:hover{background:rgba(255,255,255,.1); border-color:#fff;}
+
+  .nav-link{position:relative; transition: color .25s ease, transform .25s ease; display:inline-block;}
+  .nav-link:hover{transform:translateY(-1px);}
+  .nav-link::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:linear-gradient(90deg,var(--red),#FF6B5B);transition:width .3s ease;}
+  .nav-link:hover{color:#FF9B8F !important;}
+  .nav-link:hover::after{width:100%;}
+  .nav-link.active{color:#FF6B5B !important; font-weight:600;}
+  .nav-link.active::after{width:100%;}
+
+  /* ---- Light header + interactive section heading colors ---- */
+  #site-header .nav-link{
+    color:var(--navy) !important;
+  }
+  #site-header .nav-link:hover{
+    color:var(--red) !important;
+  }
+  #site-header .nav-link.active{
+    color:var(--red) !important;
+  }
+  #site-header #header-phone{
+    color:var(--navy) !important;
+  }
+  #site-header #header-phone:hover{
+    color:var(--blue) !important;
+  }
+  #site-header #mobile-menu-btn{
+    color:var(--navy);
+    transition:color .25s ease, background .25s ease, transform .2s ease;
+  }
+  #site-header #mobile-menu-btn:hover{
+    color:var(--red);
+    background:rgba(198,40,40,.07);
+    transform:scale(1.04);
+  }
+
+  /* About Us heading: strong contrast + subtle interactive color */
+  #about h2{
+    color:var(--navy) !important;
+    transition:color .3s ease, transform .3s ease;
+  }
+  #about h2:hover{
+    color:var(--red) !important;
+    transform:translateX(3px);
+  }
+  #about .eyebrow{
+    color:var(--red) !important;
+  }
+
+  /* Brands heading: blue/red brand-accent treatment */
+  #brands h2{
+    color:var(--navy) !important;
+    transition:color .3s ease, transform .3s ease;
+  }
+  #brands h2:hover{
+    color:var(--blue) !important;
+    transform:translateY(-2px);
+  }
+  #brands .eyebrow{
+    color:var(--blue) !important;
+  }
+
+  /* Top-bar/section heading accents */
+  .section-title{
+    color:var(--navy) !important;
+    transition:color .25s ease, transform .25s ease;
+  }
+  .section-flag:hover .section-title{
+    color:var(--red) !important;
+  }
+
+  /* Make the main hero text and CTA controls remain attractive on white */
+  #home .btn-outline{
+    color:var(--navy) !important;
+    border-color:rgba(15,23,42,.35) !important;
+  }
+  #home .btn-outline:hover{
+    color:var(--red) !important;
+    background:rgba(198,40,40,.06) !important;
+    border-color:var(--red) !important;
+  }
+
+  /* About Us: premium dark section treatment */
+  #about .eyebrow{color:#FF6B5B !important;}
+  #about h2{color:#FFFFFF !important;}
+  #about h2:hover{color:#FF6B5B !important;}
+  #about p{color:rgba(255,255,255,.72) !important;}
+  #about .feature-heading{color:#FFFFFF !important;}
+  #about .feature-highlight{
+    color:#FFFFFF !important;
+    background:linear-gradient(120deg, rgba(198,40,40,.22), rgba(21,101,192,.20));
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);
+  }
+  #about .feature-highlight:hover{color:#FF9B8F !important;}
+  #about .mission-vision-title{color:#FFFFFF !important;}
+  #about .mission-vision-copy{color:rgba(255,255,255,.62) !important;}
+  #about .card-lift{
+    box-shadow:0 18px 40px -24px rgba(0,0,0,.45);
+  }
+  #about .card-lift:hover{
+    box-shadow:0 24px 48px -18px rgba(0,0,0,.55);
+  }
+
+  /* header shrink-on-scroll */
+  #site-header{transition: background .3s ease, box-shadow .3s ease, padding .3s ease;}
+  #site-header.scrolled .header-row{height:4.25rem;}
+  .header-row{transition: height .3s ease;}
+
+  .btn-primary{position:relative; overflow:hidden;}
+  .btn-primary:hover{box-shadow: 0 10px 28px -8px rgba(198,40,40,.55);}
+
+  .marquee-track{animation:scroll-left 32s linear infinite;}
+  .marquee-track:hover{animation-play-state:paused;}
+  @keyframes scroll-left{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  .counter-num{font-variant-numeric:tabular-nums;}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+    .marquee-track{animation:none;}
+    .current-line{stroke-dashoffset:0; animation:none;}
+  }
+
+  ::selection{background:var(--red); color:#fff;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--blue); outline-offset:2px; border-radius:4px;}
+
+  /* ---- product category tabs ---- */
+  .product-tab-btn{
+    display:inline-flex; align-items:center; gap:6px; white-space:nowrap;
+    padding:10px 18px; border-radius:999px; font-size:13.5px; font-weight:600;
+    border:1.5px solid var(--line); background:#fff; color:#475569;
+    transition: all .25s ease; cursor:pointer; flex-shrink:0;
+  }
+  .product-tab-btn:hover{ border-color:var(--red); color:var(--red); }
+  .product-tab-btn.active{ background:var(--navy); border-color:var(--navy); color:#fff; }
+  .product-tab-badge{
+    background:var(--red); color:#fff; font-size:9.5px; font-weight:700;
+    padding:2px 7px; border-radius:999px; letter-spacing:.03em;
+  }
+  .product-grid-transition{ transition: opacity .25s ease; }
+  #featured-grid{ padding-left:22px; scroll-padding-left:22px; }
+  #carousel-prev{ left:4px; }
+  #carousel-next{ right:4px; }
+
+  /* Trust strip: keep items on one line and make markers slightly larger */
+  .trust-strip{flex-wrap:nowrap !important; overflow-x:auto; white-space:nowrap !important;}
+  .trust-strip-item{white-space:nowrap; display:inline-flex; align-items:center; gap:.5rem; padding:0 .4rem; flex:0 0 auto; line-height:1.2}
+  .trust-strip{scrollbar-width:none;}
+  .trust-strip::-webkit-scrollbar{display:none}
+  .trust-strip .tri-bullet{border-left:9px solid transparent; border-right:9px solid transparent; border-bottom:12px solid var(--blue); transform:none}
+  @media (min-width:1024px){
+    .trust-strip{overflow:visible}
+  }
+
+  /* ---- interactive logo lockup (no filters/glow — keeps the logo pixel-crisp) ---- */
+  /* Light hero theme */
+  #home{
+    background:#FFFFFF !important;
+    color:var(--ink);
+  }
+  #home .hero-eyebrow{color:#475569 !important;}
+  #home .hero-heading{color:var(--navy) !important;}
+  #home .hero-copy{color:#475569 !important;}
+  #home .hero-stat-number{color:var(--navy) !important;}
+  #home .hero-stat-label{color:#64748B !important;}
+  #home .hero-info-card{
+    background:rgba(248,250,252,.96) !important;
+    border:1px solid #E2E8F0 !important;
+    box-shadow:0 18px 45px -28px rgba(15,23,42,.25);
+    backdrop-filter:blur(6px);
+  }
+  #home .hero-info-title{color:var(--navy) !important;}
+  #home .hero-info-subtitle{color:#64748B !important;}
+  #home .hero-info-list{color:#475569 !important;}
+  #home .hero-info-icon{background:rgba(198,40,40,.10) !important;}
+  #home .hero-decoration{opacity:.10 !important;filter:blur(40px);}
+
+  .logo-group{position:relative;}
+  /* Supplied company logo: compact, aligned, and responsive without changing its colors. */
+  .site-logo{
+    display:block;
+    width:auto;
+    height:58px;
+    max-width:225px;
+    object-fit:contain;
+    object-position:left center;
+  }
+  @media (max-width:1023px){
+    .site-logo{
+      height:50px;
+      max-width:195px;
+    }
+  }
+  @media (max-width:420px){
+    .site-logo{
+      height:44px;
+      max-width:175px;
+    }
+  }
+  .logo-mark{
+    transition: transform .45s cubic-bezier(.34,1.56,.64,1);
+    will-change: transform;
+  }
+  .logo-group:hover .logo-mark{ transform: scale(1.06); }
+
+  .logo-text-shine{
+    background-image: linear-gradient(100deg, #FF6B5B 30%, #FFE8E4 45%, #FF6B5B 60%);
+    background-size: 260% 100%;
+    background-position: 200% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: background-position 1s ease;
+  }
+  .logo-group:hover .logo-text-shine{ background-position: -60% 0; }
+
+  .logo-underline{position:relative; display:inline-block; padding-bottom:4px;}
+  .logo-underline::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:2px;
+    background:linear-gradient(90deg, var(--red), #FF6B5B);
+    transition: width .45s ease;
+  }
+  .logo-group:hover .logo-underline::after{ width:100%; }
+
+  @media (prefers-reduced-motion: reduce){
+    .logo-mark{transition:none;}
+  }
+
+  /* responsive partner grid helpers to avoid footer overflow */
+  #authorized-partners, #associated-partners{display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:.75rem}
+  @media (min-width:1024px){
+    #authorized-partners{grid-template-columns:repeat(3, minmax(0,1fr))}
+    #associated-partners{grid-template-columns:repeat(6, minmax(0,1fr))}
+  }
+
+  /* Compact desktop view: keeps browser zoom at 100% while making the page
+     feel less oversized. Content and branding remain unchanged. */
+  @media (min-width:1024px){
+    html{font-size:80%;}
+    .max-w-7xl{max-width:78rem !important;}
+    .max-w-6xl{max-width:70rem !important;}
+
+    /* Reduce large vertical spacing across sections */
+    #about.py-24, #about.py-24.lg\:py-32,
+    #brands.py-24, #brands.py-24.lg\:py-28,
+    #services.py-24, #services.py-24.lg\:py-32,
+    #industries.py-24, #industries.py-24.lg\:py-32,
+    #featured-products.py-24, #featured-products.py-24.lg\:py-32{
+      padding-top:5rem !important;
+      padding-bottom:5rem !important;
+    }
+
+    /* Keep the first screen more compact */
+    #home{min-height:calc(100vh - 64px) !important;}
+    #home > .relative.max-w-7xl{
+      gap:2.5rem !important;
+    }
+    #stats-row{margin-top:2.5rem !important;}
+
+    /* Slightly tighter common content gaps */
+    .gap-16{gap:3rem !important;}
+    .gap-14{gap:2.75rem !important;}
+    .mt-16{margin-top:3rem !important;}
+  }
+
+
+  /* Refined desktop header at 80% page scale:
+     keep comfortable spacing while slightly reducing text size. */
+  @media (min-width:1024px){
+    #site-header .header-row{
+      height:4.5rem !important;
+      min-height:4.5rem !important;
+    }
+    #site-header #desktop-nav{
+      gap:1.35rem !important;
+      font-size:13px !important;
+      letter-spacing:-0.01em;
+    }
+    #site-header #desktop-nav .nav-link{
+      font-size:13px !important;
+    }
+    #site-header > .max-w-7xl{
+      padding-left:1.5rem !important;
+      padding-right:1.5rem !important;
+    }
+    #site-header > .max-w-7xl > .header-row > div.hidden.lg\:flex{
+      gap:.75rem !important;
+    }
+    #site-header #header-phone{
+      font-size:13px !important;
+    }
+    #site-header .btn-primary{
+      font-size:13px !important;
+      padding-left:1rem !important;
+      padding-right:1rem !important;
+      padding-top:.65rem !important;
+      padding-bottom:.65rem !important;
+    }
+    #site-header .site-logo{
+      height:54px !important;
+      max-width:215px !important;
+    }
+  }
+
+
+  /* About heading: use the available horizontal space instead of wrapping. */
+  @media (min-width:1024px){
+    #about h2{
+      white-space:nowrap !important;
+      font-size:2.05rem !important;
+      line-height:1.15 !important;
+      letter-spacing:-0.02em;
+    }
+    #about .max-w-7xl{
+      align-items:start !important;
+    }
+  }
+  @media (min-width:1280px){
+    #about h2{
+      font-size:2.25rem !important;
+    }
+  }
+
+
+  /* Prevent the About feature-card block from colliding with the single-line heading. */
+  @media (min-width:1024px){
+    #about > .max-w-7xl > .lg\:col-span-7{
+      margin-top:6.5rem !important;
+    }
+  }
+
+</style>
+</head>
+<body class="bg-white antialiased">
+
+<!-- ============ HEADER ============ -->
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background:#FFFFFF; box-shadow:0 1px 0 rgba(15,23,42,.08);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex items-center justify-between h-20 header-row">
+      <a href="#home" class="flex items-center logo-group shrink-0" aria-label="AG Electric &amp; Automation home">
+        <img
+          src="logo.jpg"
+          alt="AG Electric &amp; Automation"
+          class="site-logo"
+        >
+      </a>
+      <nav class="hidden lg:flex items-center gap-5 text-[14.5px] font-medium whitespace-nowrap" id="desktop-nav">
+        <a href="#about" class="nav-link" data-section="about">About Us</a>
+        <a href="#brands" class="nav-link" data-section="brands">Brands</a>
+        <a href="#categories" class="nav-link" data-section="categories">Products</a>
+        <a href="#services" class="nav-link" data-section="services">Services</a>
+        <a href="#industries" class="nav-link" data-section="industries">Industries</a>
+        <a href="#contact" class="nav-link" data-section="contact">Contact Us</a>
+      </nav>
+      <div class="hidden lg:flex items-center gap-3 whitespace-nowrap">
+        <a href="tel:+917830553388" id="header-phone" class="text-[14.5px] font-semibold nav-link">+91 78305 53388</a>
+        <a href="#contact" class="btn-primary text-white text-[14.5px] font-semibold px-4 py-2.5 rounded-lg">Get a Quote</a>
+      </div>
+      <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg shrink-0" aria-label="Open menu">
+        <svg id="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- mobile nav -->
+  <div id="mobile-nav" class="lg:hidden hidden bg-white border-t border-gray-100 shadow-xl">
+    <div class="flex flex-col px-6 py-5 gap-4 text-[16px] font-medium" style="color:var(--ink);">
+      <a href="#about">About Us</a>
+      <a href="#brands">Our Brands</a>
+      <a href="#categories">Products</a>
+      <a href="#services">Our Services</a>
+      <a href="#industries">Industries We Serve</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#contact" class="btn-primary text-white text-sm font-semibold px-5 py-3 rounded-lg text-center mt-1">Get a Quote</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="relative diagonal-cut pt-24 pb-18 lg:pt-32 lg:pb-28 overflow-hidden" style="background:#FFFFFF;">
+  <!-- ambient triangular glow, echoing the pyramid logomark -->
+  <div class="pointer-events-none absolute -right-24 top-10 w-[520px] h-[520px] hero-decoration" style="background:conic-gradient(from 210deg, var(--red), transparent 35%); clip-path:polygon(50% 0,100% 100%,0 100%); filter:blur(40px);"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7">
+      <div class="reveal in-view flex items-center gap-2 mb-6">
+        <span class="tri-bullet"></span>
+        <span class="eyebrow hero-eyebrow" style="white-space:nowrap;">Authorized Electrical Distributor • Wholesale Supplier • Genuine Products</span>
+      </div>
+      <h1 class="reveal in-view reveal-delay-1 hero-heading font-display font-bold text-[2.35rem] leading-[1.15] sm:text-5xl lg:text-[3.4rem] lg:leading-[1.12]">
+        Powering Industries, Projects &amp; Homes with <span style="color:var(--red);">Quality Electrical Solutions</span>
+      </h1>
+      <p class="reveal in-view reveal-delay-2 mt-6 text-[17px] leading-relaxed hero-copy max-w-xl">
+        AG Electric & Automation is a trusted wholesale distributor of premium electrical products, automation solutions, and industrial supplies — serving contractors, businesses, and homeowners with genuine products and expert support.
+      </p>
+      <div class="reveal in-view reveal-delay-3 mt-9 flex flex-wrap gap-4">
+        <a href="#categories" class="btn-primary text-white font-semibold px-7 py-3.5 rounded-lg text-[15px]">Explore Products</a>
+        <a href="#contact" class="btn-outline text-white font-semibold px-7 py-3.5 rounded-lg text-[15px]">Contact Us</a>
+      </div>
+
+      <div class="reveal in-view reveal-delay-4 mt-14 grid grid-cols-3 sm:grid-cols-3 gap-6 max-w-lg" id="stats-row">
+        <div>
+          <div class="counter-num hero-stat-number font-display font-bold text-3xl sm:text-4xl" data-target="25" data-suffix="+">0</div>
+          <div class="hero-stat-label text-[13px] mt-1">Years Serving Industry</div>
+        </div>
+        <div>
+          <div class="counter-num hero-stat-number font-display font-bold text-3xl sm:text-4xl" data-target="40" data-suffix="+">0</div>
+          <div class="hero-stat-label text-[13px] mt-1">Authorized Brands</div>
+        </div>
+        <div>
+          <div class="counter-num hero-stat-number font-display font-bold text-3xl sm:text-4xl" data-target="1200" data-suffix="+">0</div>
+          <div class="hero-stat-label text-[13px] mt-1">Projects Supplied</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5 reveal in-view reveal-delay-2" style="transform:translateY(-105px);">
+      <div class="relative rounded-2xl p-8 sm:p-10 hero-info-card">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-11 h-11 rounded-lg flex items-center justify-center hero-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+          </div>
+          <div>
+            <div class="hero-info-title font-semibold text-[15px]">On-Time, Every Time</div>
+            <div class="hero-info-subtitle text-[13px]">Wholesale & project supply, dispatched fast</div>
+          </div>
+        </div>
+        <ul class="space-y-4 hero-info-list text-[14.5px]">
+          <li class="flex gap-3"><svg class="shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>100% genuine, manufacturer-authorized stock</li>
+          <li class="flex gap-3"><svg class="shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Bulk & project pricing for contractors and OEMs</li>
+          <li class="flex gap-3"><svg class="shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Technical guidance from an expert team that's seen every site</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<section class="border-b" style="border-color:var(--line);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex items-center justify-center gap-x-6 gap-y-3 text-[15px] font-medium trust-strip" style="color:#64748B;">
+    <span class="trust-strip-item"><span class="tri-bullet" style="border-bottom-color:var(--blue);"></span>Authorized Electrical Distributor</span>
+    <span class="trust-strip-item"><span class="tri-bullet" style="border-bottom-color:var(--blue);"></span>Wholesale & Bulk Supply</span>
+    <span class="trust-strip-item"><span class="tri-bullet" style="border-bottom-color:var(--blue);"></span>Automation Partner</span>
+    <span class="trust-strip-item"><span class="tri-bullet" style="border-bottom-color:var(--blue);"></span>Genuine Products, Guaranteed</span>
+  </div>
+</section>
+
+<!-- ============ ABOUT / COMPANY INTRO ============ -->
+<section id="about" class="py-24 lg:py-32" style="background:linear-gradient(135deg, #0F172A 0%, #16213A 100%);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-16 items-center">
+    <div class="lg:col-span-5 reveal">
+      <div class="eyebrow flex items-center gap-2" style="color:var(--red); font-size:1.1rem;">
+        <span class="tri-bullet"></span>
+        Who We Are
+      </div>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl mt-4 leading-tight" style="color:var(--navy);">Decades on the ground. Now built for the digital age.</h2>
+      <p class="mt-6 text-[15.5px] leading-relaxed" style="color:#475569;">
+        <span class="feature-heading">Built for Industry. Trusted for Every Project.</span>
+        A G Electric &amp; Automation has grown from a local electrical counter into a <span class="feature-highlight">trusted electrical and automation distribution partner for industries, contractors, builders, and project businesses.</span> With strong stock, trusted manufacturer relationships, and technical expertise, we make industrial electrical procurement <span class="feature-highlight">faster, easier, and more reliable.</span>
+      </p>
+      <p class="mt-4 text-[15.5px] leading-relaxed" style="color:#475569;">
+        We supply and distribute <span class="feature-highlight">switchgear &amp; protection products, energy and power monitors, electrical equipment, cables &amp; wires, automation solutions, panel solutions, modular switches and sockets, lights, fans, and other allied electrical products.</span> from leading manufacturers. <span class="feature-highlight">From plant floors to project sites, we deliver the right products, dependable supply, and technical support to keep industries powered and projects moving.</span>
+      </p>
+      <div class="mt-8 grid grid-cols-2 gap-6">
+        <div class="pl-4" style="border-left:3px solid var(--red);">
+          <div class="font-display font-bold text-2xl mission-vision-title">Mission</div>
+          <p class="text-[13.5px] mt-1 mission-vision-copy">Deliver genuine electrical products with honest pricing and real technical support.</p>
+        </div>
+        <div class="pl-4" style="border-left:3px solid var(--blue);">
+          <div class="font-display font-bold text-2xl mission-vision-title">Vision</div>
+          <p class="text-[13.5px] mt-1 mission-vision-copy">Be the most trusted electrical & automation partner in the region.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7 reveal reveal-delay-2">
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="rounded-2xl p-7 bg-white card-lift border" style="border-color:var(--line);">
+          <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:rgba(198,40,40,.08);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-lg" style="color:var(--navy);">Genuine Stock</h3>
+          <p class="text-[13.5px] mt-2" style="color:#64748B;">Every product traceable to an authorized manufacturer channel.</p>
+        </div>
+        <div class="rounded-2xl p-7 bg-white card-lift border" style="border-color:var(--line);">
+          <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:rgba(21,101,192,.08);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-lg" style="color:var(--navy);">Fast Turnaround</h3>
+          <p class="text-[13.5px] mt-2" style="color:#64748B;">Stocked warehousing built for bulk and urgent site orders.</p>
+        </div>
+        <div class="rounded-2xl p-7 bg-white card-lift border" style="border-color:var(--line);">
+          <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:rgba(22,163,74,.08);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-lg" style="color:var(--navy);">Warranty Backed</h3>
+          <p class="text-[13.5px] mt-2" style="color:#64748B;">Manufacturer warranty honored on every single item we ship.</p>
+        </div>
+        <div class="rounded-2xl p-7 bg-white card-lift border" style="border-color:var(--line);">
+          <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style="background:rgba(15,23,42,.06);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-lg" style="color:var(--navy);">Site-Ready Support</h3>
+          <p class="text-[13.5px] mt-2" style="color:#64748B;">Technical guidance from people who've worked live sites.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRANDS ============ -->
+<section id="brands" class="py-24 lg:py-28 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 text-center reveal">
+    <div class="eyebrow flex items-center justify-center gap-2" style="color:var(--blue);"><span class="tri-bullet" style="border-bottom-color:var(--blue);"></span>Brands We Deal In</div>
+    <h2 class="font-display font-bold text-3xl sm:text-4xl mt-4" style="color:var(--navy);">Authorized for top brands — trusted on site</h2>
+    <p class="mt-4 max-w-2xl mx-auto text-[15px]" style="color:#64748B;">Our trusted network of authorized and associated industry-leading brands.</p>
+  </div>
+
+  <!-- ---- Tier 1: Authorized Channel Partners (primary, most prominent) ---- -->
+  <div class="max-w-6xl mx-auto px-6 lg:px-10 mt-16 reveal">
+    <div class="flex items-center justify-center gap-3 mb-2">
+      <div class="section-flag section-flag--primary">
+        <span class="tri-bullet" style="border-bottom-color:var(--red);"></span>
+        <div class="section-title">Authorized Channel Partners</div>
+      </div>
+    </div>
+    <p class="text-center section-sub mb-8">Brands we hold a direct, authorized distribution channel with</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="authorized-partners"></div>
+  </div>
+
+  <!-- ---- Tier 2: Other Associated Partners (secondary, understated) ---- -->
+  <div class="max-w-6xl mx-auto px-6 lg:px-10 mt-16 reveal">
+    <div class="flex items-center justify-center gap-3 mb-2">
+      <div class="section-flag section-flag--primary">
+        <span class="tri-bullet" style="border-bottom-color:var(--red);"></span>
+        <div class="section-title" style="color:var(--navy); font-size:22px;">Other Associated Partners</div>
+      </div>
+    </div>
+    <p class="text-center section-sub mb-8">Additional leading brands we supply and support</p>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4" id="associated-partners"></div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="py-24 lg:py-32 relative overflow-hidden" style="background:var(--navy);">
+  <div class="pointer-events-none absolute -left-20 -bottom-20 w-[420px] h-[420px] opacity-10" style="background:conic-gradient(from 30deg, var(--blue), transparent 40%); clip-path:polygon(50% 0,100% 100%,0 100%); filter:blur(40px);"></div>
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="reveal max-w-2xl">
+      <div class="eyebrow flex items-center gap-2 text-white/60"><span class="tri-bullet"></span>Services</div>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl mt-4 text-white">Built for how contractors actually buy</h2>
+    </div>
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5" id="services-grid"></div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="py-24 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-14 items-start">
+    <div class="lg:col-span-4 reveal">
+      <div class="eyebrow flex items-center gap-2" style="color:var(--blue);"><span class="tri-bullet" style="border-bottom-color:var(--blue);"></span>Why AG Electric</div>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl mt-4 leading-tight" style="color:var(--navy);">Reasons contractors keep coming back</h2>
+      <p class="mt-5 text-[15px]" style="color:#64748B;">Not the biggest promises — just a distributor that shows up prepared, stocked, and honest about lead times.</p>
+    </div>
+    <div class="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-9" id="why-grid"></div>
+  </div>
+</section>
+
+<!-- ============ INDUSTRIES SERVED ============ -->
+<section id="industries" class="py-24 lg:py-32" style="background:var(--ice);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="reveal max-w-2xl">
+      <div class="eyebrow flex items-center gap-2" style="color:var(--red);"><span class="tri-bullet"></span>Industries Served</div>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl mt-4" style="color:var(--navy);">On the supply list for every kind of site</h2>
+    </div>
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="industries-grid"></div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PRODUCTS ============ -->
+<section id="featured-products" class="py-24 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="reveal flex items-end justify-between flex-wrap gap-4">
+      <div>
+        <div class="eyebrow flex items-center gap-2" style="color:var(--blue);"><span class="tri-bullet" style="border-bottom-color:var(--blue);"></span>Product categories</div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl mt-4" style="color:var(--navy);">Popular with our regular buyers</h2>
+      </div>
+      <a href="#categories" class="text-sm font-semibold nav-link" style="color:var(--red);">View all categories →</a>
+    </div>
+
+    <!-- category tabs -->
+    <div class="mt-10 reveal">
+      <div class="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1" id="product-tabs" style="scrollbar-width:thin;"></div>
+      <p id="product-tab-desc" class="mt-4 text-[14px] max-w-2xl" style="color:#64748B;"></p>
+    </div>
+
+    <div class="mt-8 relative">
+      <button type="button" id="carousel-prev" class="hidden sm:flex absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full items-center justify-center bg-white border shadow-md" style="border-color:var(--line);" aria-label="Previous products">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="flex gap-6 overflow-x-auto pb-3 product-grid-transition" id="featured-grid" style="scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;"></div>
+      <button type="button" id="carousel-next" class="hidden sm:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full items-center justify-center bg-white border shadow-md" style="border-color:var(--line);" aria-label="Next products">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST / REVIEWS ============ -->
+<section class="py-24 lg:py-32" style="background:var(--ice);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="reveal text-center max-w-2xl mx-auto">
+      <div class="eyebrow flex items-center justify-center gap-2" style="color:var(--red);"><span class="tri-bullet"></span>Customer Trust</div>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl mt-4" style="color:var(--navy);">What buyers say after working with us</h2>
+      <div class="flex items-center justify-center gap-2 mt-4">
+        <div class="flex text-yellow-400">★★★★★</div>
+        <span class="text-[13.5px] font-medium" style="color:#64748B;">Rated by customers on Google</span>
+      </div>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-6" id="reviews-grid"></div>
+  </div>
+</section>
+
+<!-- ============ CTA BANNER ============ -->
+<section class="relative py-20 diagonal-cut-rev" style="background:linear-gradient(120deg, var(--red) 0%, var(--red-deep) 100%);">
+  <div class="max-w-5xl mx-auto px-6 lg:px-10 text-center reveal">
+    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">Have a project or a bulk order coming up?</h2>
+    <p class="mt-4 text-white/85 text-[15.5px] max-w-xl mx-auto">Send us your requirement list — we'll come back with stock availability and wholesale pricing, usually the same day.</p>
+    <div class="mt-8 flex flex-wrap gap-4 justify-center">
+      <a href="#contact" class="bg-white font-semibold px-7 py-3.5 rounded-lg text-[15px]" style="color:var(--red-deep);">Request a Quote</a>
+      <a href="tel:+917830553388" class="btn-outline text-white font-semibold px-7 py-3.5 rounded-lg text-[15px]">Call Us Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="py-24 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-14">
+    <div class="lg:col-span-5 reveal">
+      <div class="eyebrow flex items-center gap-2" style="color:var(--blue);"><span class="tri-bullet" style="border-bottom-color:var(--blue);"></span>Contact</div>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl mt-4" style="color:var(--navy);">Let's talk about your requirement</h2>
+      <p class="mt-4 text-[15px]" style="color:#64748B;">Reach out directly, or send your list through the form and our team will follow up with pricing and availability.</p>
+
+      <div class="mt-9 space-y-6">
+        <div class="flex gap-4">
+          <div class="w-11 h-11 rounded-lg flex items-center justify-center shrink-0" style="background:rgba(198,40,40,.08);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="font-semibold text-[15px]" style="color:var(--navy);">Store Address</div>
+            <div class="text-[14px] mt-1" style="color:#64748B;">116/4 Durga Nagar, Kailashpuri, Garh Rd, Nauchandi, Meerut, Uttar Pradesh 250002</div>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-11 h-11 rounded-lg flex items-center justify-center shrink-0" style="background:rgba(21,101,192,.08);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="font-semibold text-[15px]" style="color:var(--navy);">Phone / WhatsApp</div>
+            <div class="text-[14px] mt-1" style="color:#64748B;"><a href="tel:+917830553388" class="hover:underline">+91 78305 53388</a></div>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-11 h-11 rounded-lg flex items-center justify-center shrink-0" style="background:rgba(22,163,74,.08);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg>
+          </div>
+          <div>
+            <div class="font-semibold text-[15px]" style="color:var(--navy);">Email</div>
+            <div class="text-[14px] mt-1" style="color:#64748B;"><a href="mailto:agelectricmrt@gmail.com" class="hover:underline">agelectricmrt@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-11 h-11 rounded-lg flex items-center justify-center shrink-0" style="background:rgba(15,23,42,.06);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
+          <div>
+            <div class="font-semibold text-[15px]" style="color:var(--navy);">Working Hours</div>
+            <div class="text-[14px] mt-1" style="color:#64748B;">Tue – Sun, 9:30 AM – 8:30 PM<br><span class="text-[13px]" style="color:#94A3B8;">Closed on Mondays</span></div>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://wa.me/917830553388" target="_blank" rel="noopener" class="mt-8 inline-flex items-center gap-2 font-semibold text-[14.5px] px-5 py-3 rounded-lg text-white" style="background:var(--green);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.47 1.29 4.93L2 22l5.29-1.38a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.92C21.96 6.45 17.5 2 12.04 2Z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+
+    <div class="lg:col-span-7 reveal reveal-delay-2">
+      <div class="rounded-2xl overflow-hidden border h-56 mb-6" style="border-color:var(--line);">
+        <iframe title="AG Electric & Automation location" src="https://www.google.com/maps?q=116/4+Durga+Nagar+Kailashpuri+Garh+Rd+Nauchandi+Meerut+Uttar+Pradesh+250002&output=embed" class="w-full h-full" style="border:0;" loading="lazy"></iframe>
+      </div>
+      <form class="grid sm:grid-cols-2 gap-5" onsubmit="event.preventDefault(); alert('Thanks — this is a design preview. Connect a form handler to receive live enquiries.');">
+        <div class="sm:col-span-1">
+          <label class="block text-[13.5px] font-medium mb-2" style="color:var(--navy);">Full Name</label>
+          <input type="text" required class="w-full rounded-lg px-4 py-3 border text-[14.5px]" style="border-color:var(--line);" placeholder="Your name">
+        </div>
+        <div class="sm:col-span-1">
+          <label class="block text-[13.5px] font-medium mb-2" style="color:var(--navy);">Phone Number</label>
+          <input type="tel" required class="w-full rounded-lg px-4 py-3 border text-[14.5px]" style="border-color:var(--line);" placeholder="10-digit mobile number">
+        </div>
+        <div class="sm:col-span-2">
+          <label class="block text-[13.5px] font-medium mb-2" style="color:var(--navy);">I'm enquiring as</label>
+          <select class="w-full rounded-lg px-4 py-3 border text-[14.5px] bg-white" style="border-color:var(--line);">
+            <option>Contractor / Electrician</option>
+            <option>Builder / Developer</option>
+            <option>Retailer / Distributor</option>
+            <option>Industrial / OEM Buyer</option>
+            <option>Homeowner</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label class="block text-[13.5px] font-medium mb-2" style="color:var(--navy);">Requirement Details</label>
+          <textarea rows="4" required class="w-full rounded-lg px-4 py-3 border text-[14.5px]" style="border-color:var(--line);" placeholder="Tell us what you need — products, quantity, and timeline"></textarea>
+        </div>
+        <div class="sm:col-span-2">
+          <button type="submit" class="btn-primary text-white font-semibold px-7 py-3.5 rounded-lg text-[15px] w-full sm:w-auto">Send Enquiry</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer style="background:var(--navy);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-10">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="mark.png" alt="AG Electric & Automation" class="h-14 w-auto shrink-0">
+          <span class="leading-[1.05]">
+            <span class="block font-display font-extrabold text-[16px] tracking-wide" style="color:#FF6B5B;">AG ELECTRIC</span>
+            <span class="block font-display font-semibold text-[9.5px] tracking-[0.28em] text-white/55">&amp; AUTOMATION</span>
+          </span>
+        </div>
+        <p class="text-white/50 text-[13.5px] leading-relaxed">Authorized electrical distributor and wholesale supplier of electrical products and automation solutions.</p>
+      </div>
+      <div>
+        <div class="text-white font-semibold text-[14px] mb-4">Company</div>
+        <ul class="space-y-2.5 text-white/50 text-[13.5px]">
+          <li><a href="#about" class="hover:text-white">About Us</a></li>
+          <li><a href="#brands" class="hover:text-white">Brands</a></li>
+          <li><a href="#services" class="hover:text-white">Services</a></li>
+          <li><a href="#contact" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="text-white font-semibold text-[14px] mb-4">Products</div>
+        <ul class="space-y-2.5 text-white/50 text-[13.5px]">
+          <li>Switches & Wiring Devices</li>
+          <li>MCBs & Distribution Boards</li>
+          <li>Wires & Cables</li>
+          <li>Industrial Automation</li>
+        </ul>
+      </div>
+      <div>
+        <div class="text-white font-semibold text-[14px] mb-4">Get In Touch</div>
+        <ul class="space-y-2.5 text-white/50 text-[13.5px]">
+          <li>116/4 Durga Nagar, Kailashpuri, Garh Rd, Meerut, UP 250002</li>
+          <li><a href="tel:+917830553388" class="hover:text-white">+91 78305 53388</a></li>
+          <li><a href="mailto:agelectricmrt@gmail.com" class="hover:text-white">agelectricmrt@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-14 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3" style="border-top:1px solid rgba(255,255,255,.08);">
+      <p class="text-white/40 text-[12.5px]">© <span id="year"></span> AG Electric & Automation. All rights reserved.</p>
+      <p class="text-white/30 text-[11.5px] text-center sm:text-right">Electrical Wholesaler · Electrical Distributor · Automation Products Supplier · Industrial Electrical Supplier</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ---------- data ----------
+const authorizedPartners = [
+  {name:"Elmeasure", logo:"Authorised channel partners/Elmeasure.png"},
+  {name:"Schneider Electric", logo:"Authorised channel partners/Schneider Electric.png"},
+  {name:"Jaquar Lighting", logo:"Authorised channel partners/Jaquar Lighting.png"},
+  {name:"REMI Fans", logo:"Authorised channel partners/REMI.png"},
+  {name:"GM", logo:"Authorised channel partners/GM.jpg"},
+  {name:"Red Card", logo:"Authorised channel partners/Red Card.jpg"},
+];
+const associatedPartners = [
+  {name:"Finolex", logo:"Other associated partners/logo1.png"},
+  {name:"RR Cables", logo:"Other associated partners/logo2.jpeg"},
+  {name:"Orient", logo:"Other associated partners/logo3.png"},
+  {name:"Polycab", logo:"Other associated partners/logo4.jpg"},
+  {name:"Havells", logo:"Other associated partners/logo5.png"},
+  {name:"HPL", logo:"Other associated partners/logo6.jpeg"},
+];
+
+const categories = [
+  {name:"Switches & Wiring Devices", desc:"Modular switches, sockets, and plates for every finish and load.", icon:"M3 12h6M15 12h6M9 6h6v12H9z"},
+  {name:"MCBs & Protection", desc:"Circuit breakers and protection gear for safe, code-compliant panels.", icon:"M13 2 3 14h7l-1 8 10-12h-7l1-8z"},
+  {name:"Distribution Boards", desc:"Single & three-phase boards built for reliability under load.", icon:"M4 4h16v16H4zM8 8h8v8H8z"},
+  {name:"Lighting", desc:"LED, panel, and industrial lighting for every kind of space.", icon:"M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"},
+  {name:"Fans", desc:"Ceiling, wall, and exhaust fans from trusted manufacturers.", icon:"M12 12v0M12 3c1.5 3 1 6-0 9M21 12c-3 1.5-6 1-9 0M12 21c-1.5-3-1-6 0-9M3 12c3-1.5 6-1 9 0"},
+  {name:"Pipes & Conduits", desc:"PVC conduits and fittings for safe, tidy cable routing.", icon:"M4 6h16M4 12h16M4 18h16"},
+  {name:"Wires & Cables", desc:"House wires to armoured industrial cable, on the shelf.", icon:"M3 12c3-4 6 4 9 0s6 4 9 0"},
+  {name:"Industrial Automation", desc:"Contactors, relays, drives, and control components.", icon:"M4 21V9l8-6 8 6v12M9 21v-6h6v6"},
+  {name:"Water Heaters", desc:"Storage and instant heaters for home and commercial use.", icon:"M12 2v6M12 22a6 6 0 0 0 6-6c0-4-6-10-6-10s-6 6-6 10a6 6 0 0 0 6 6z"},
+];
+
+const services = [
+  {title:"Wholesale Supply", desc:"Stock pricing built for volume, not single pieces."},
+  {title:"Project Supply", desc:"Phased delivery matched to your site schedule."},
+  {title:"Automation Products", desc:"Panel components sourced and specced correctly."},
+  {title:"Technical Support", desc:"Real answers on specs, ratings, and compatibility."},
+];
+
+const whyUs = [
+  {title:"Authorized Distributor Status", desc:"Direct manufacturer channels mean genuine stock and honored warranties."},
+  {title:"Deep, Ready Inventory", desc:"Popular SKUs kept on shelf so your site doesn't wait on us."},
+  {title:"Transparent Wholesale Pricing", desc:"Clear bulk-rate slabs — no back-and-forth to get a real number."},
+  {title:"People Who Know the Product", desc:"Ask a spec question and get an answer from someone who's installed it."},
+];
+
+const industries = [
+  {name:"Commercial Buildings", icon:"M3 21h18M5 21V7l7-4 7 4v14M9 9h1M14 9h1M9 13h1M14 13h1M9 17h1M14 17h1"},
+  {name:"Factories & Plants", icon:"M2 20h20M4 20V10l4 3V10l4 3V10l4 3V6l4-2v16"},
+  {name:"Apartments & Residences", icon:"M3 10 12 3l9 7M5 10v10h14V10"},
+  {name:"Hotels & Hospitality", icon:"M3 21V7l6-4 6 4v14M9 21v-6h4v6M21 21V11l-6-4"},
+  {name:"Hospitals & Healthcare", icon:"M12 2a5 5 0 0 1 5 5v3h3a5 5 0 0 1 0 10h-3v0a5 5 0 0 1-10 0v0H4a5 5 0 0 1 0-10h3V7a5 5 0 0 1 5-5z"},
+  {name:"Industrial Installations", icon:"M4 21V9l8-6 8 6v12M9 21v-6h6v6"},
+];
+
+const productTabs = [
+  {key:"switchgear", label:"Switchgear Products", desc:"Breakers, distribution gear and factory-built panels for industrial power distribution."},
+  {key:"protection", label:"Protection Products", desc:"Protection relays, MCCBs, fuses and surge protection solutions."},
+  {key:"energy", label:"Energy & Power Monitors", desc:"Meters, power quality monitors and energy management devices."},
+  {key:"panel", label:"Panel Solutions", desc:"Custom control panels, APFC and motor control center assemblies."},
+  {key:"cables", label:"Cables & Wires", desc:"Copper and armoured cable for every circuit, from house wiring to industrial runs."},
+  {key:"automation", label:"Automation", desc:"Control and automation components built for modern industrial lines."},
+  {key:"lighting", label:"Lighting", desc:"LED lighting for homes, offices, and large-scale industrial spaces."},
+  {key:"fans", label:"Fans & Appliances", desc:"Fans and appliances for comfort across home and commercial spaces."},
+];
+
+const productData = {
+  cables: [
+    {name:"House Wire", desc:"PVC-insulated copper wiring for domestic and commercial circuits.", icon:"M3 12c3-4 6 4 9 0s6 4 9 0"},
+    {name:"Armoured Cable", desc:"XLPE armoured cable built for underground and industrial runs.", icon:"M3 12c3-4 6 4 9 0s6 4 9 0"},
+    {name:"Flexible Copper Cable", desc:"Multi-strand flexible cable for panels and control wiring.", icon:"M3 12c3-4 6 4 9 0s6 4 9 0"},
+    {name:"Control Cable", desc:"Multi-core cable for signal and control circuits.", icon:"M3 12c3-4 6 4 9 0s6 4 9 0"},
+  ],
+  switchgear: [
+    {name:"LT Switchgear", desc:"Low-tension switchgear for safe, reliable power distribution.", icon:"M4 4h16v16H4zM8 8h8v8H8z"},
+    {name:"ACB", desc:"Air circuit breakers for high-current protection.", icon:"M13 2 3 14h7l-1 8 10-12h-7l1-8z"},
+    {name:"MCCB", desc:"Moulded case circuit breakers for feeder protection.", icon:"M13 2 3 14h7l-1 8 10-12h-7l1-8z"},
+    {name:"MCB", desc:"Miniature circuit breakers for final distribution circuits.", icon:"M13 2 3 14h7l-1 8 10-12h-7l1-8z"},
+    {name:"Distribution Boards", desc:"Single & three-phase boards built for reliable load management.", icon:"M4 4h16v16H4zM8 8h8v8H8z"},
+    {name:"Control Panels", desc:"Custom-built panels for machinery and process control.", icon:"M4 21V9l8-6 8 6v12M9 21v-6h6v6"},
+    {name:"APFC Panels", desc:"Automatic power factor correction for efficient load use.", icon:"M4 21V9l8-6 8 6v12M9 21v-6h6v6"},
+    {name:"Motor Control Centers", desc:"Centralized MCC assemblies for industrial plants.", icon:"M4 21V9l8-6 8 6v12M9 21v-6h6v6"},
+    {name:"Changeover Switches", desc:"Manual & automatic changeover for backup power continuity.", icon:"M13 2 3 14h7l-1 8 10-12h-7l1-8z"},
+    {name:"Contactors & Relays", desc:"Switching and protection components for control circuits.", icon:"M4 21V9l8-6 8 6v12M9 21v-6h6v6"},
+  ],
+  protection: [
+    {name:"Surge Protection Device", desc:"Protects equipment from transient voltage spikes.", icon:"M3 12c3-4 6 4 9 0s6 4 9 0"},
+    {name:"MCCB & Fuse Units", desc:"Modular protection devices for feeders and machinery.", icon:"M4 4h16v16H4zM8 8h8v8H8z"},
+    {name:"Protection Relays", desc:"Relay-based protection for transformers and motors.", icon:"M13 2 3 14h7l-1 8 10-12h-7l1-8z"},
+  ],
+  energy: [
+    {name:"Digital Energy Meter", desc:"Three-phase and single-phase energy meters for billing and monitoring.", icon:"M9 18h6M10 22h4M12 2a7 7 0 0 1 5 5v3h3"},
+    {name:"Power Quality Analyzer", desc:"In-depth power quality and harmonics analysis tools.", icon:"M9 18h6M10 22h4M12 2a7 7 0 0 1 5 5v3h3"},
+  ],
+  panel: [
+    {name:"Control Panels", desc:"Custom-built panels for machine and process control.", icon:"M4 21V9l8-6 8 6v12M9 21v-6h6v6"},
+    {name:"APFC Panels", desc:"Automatic power factor correction assemblies.", icon:"M4 21V9l8-6 8 6v12M9 21v-6h6v6"},
+    {name:"Motor Control Centers", desc:"Skid-mounted MCC solutions for plant applications.", icon:"M4 21V9l8-6 8 6v12M9 21v-6h6v6"},
+  ],
+  automation: [
+    {name:"Contactors & Relays", desc:"Reliable switching components for automated control systems.", icon:"M4 21V9l8-6 8 6v12M9 21v-6h6v6"},
+    {name:"Motor Drives", desc:"Variable frequency drives for precise motor control.", icon:"M4 21V9l8-6 8 6v12M9 21v-6h6v6"},
+    {name:"Industrial Sensors", desc:"Sensing components for process monitoring and control.", icon:"M4 21V9l8-6 8 6v12M9 21v-6h6v6"},
+  ],
+  lighting: [
+    {name:"LED Panel Light", desc:"Even, glare-free lighting for offices and retail spaces.", icon:"M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"},
+    {name:"LED Street Light", desc:"Weatherproof street and area lighting fixtures.", icon:"M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"},
+    {name:"LED Flood Light", desc:"High-output flood lighting for yards and facades.", icon:"M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"},
+    {name:"Industrial High Bay Light", desc:"High-bay fixtures built for warehouses and factory floors.", icon:"M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"},
+  ],
+  fans: [
+    {name:"Ceiling Fan", desc:"Energy-efficient ceiling fans for home and office.", icon:"M12 12v0M12 3c1.5 3 1 6-0 9M21 12c-3 1.5-6 1-9 0M12 21c-1.5-3-1-6 0-9M3 12c3-1.5 6-1 9 0"},
+    {name:"Exhaust Fan", desc:"Ventilation fans for kitchens, bathrooms, and workspaces.", icon:"M12 12v0M12 3c1.5 3 1 6-0 9M21 12c-3 1.5-6 1-9 0M12 21c-1.5-3-1-6 0-9M3 12c3-1.5 6-1 9 0"},
+    {name:"Water Heater", desc:"Storage and instant heaters for home and commercial use.", icon:"M12 2v6M12 22a6 6 0 0 0 6-6c0-4-6-10-6-10s-6 6-6 10a6 6 0 0 0 6 6z"},
+    {name:"Wall Fan", desc:"Compact wall-mounted fans for workshops and shopfronts.", icon:"M12 12v0M12 3c1.5 3 1 6-0 9M21 12c-3 1.5-6 1-9 0M12 21c-1.5-3-1-6 0-9M3 12c3-1.5 6-1 9 0"},
+  ],
+};
+
+const reviews = [
+  {name:"R. Sharma", role:"Electrical Contractor", text:"Genuine stock, straight bulk pricing, and they actually pick up the phone when a site needs something urgently."},
+  {name:"V. Malhotra", role:"Site Supervisor, Builder", text:"We've sourced our last three projects through AG Electric. Deliveries land on schedule, every time."},
+  {name:"S. Khan", role:"Retail Shop Owner", text:"Reliable distributor for my shop restocks — the wholesale slabs make sense and stock never runs dry."},
+];
+
+// ---------- render helpers ----------
+function iconSvg(path, color){
+  return `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${path.split('M').filter(Boolean).map(p=>`<path d="M${p.trim()}"/>`).join('')}</svg>`;
+}
+
+document.getElementById('authorized-partners').innerHTML = authorizedPartners.map(p=>`
+  <div class="brand-chip rounded-2xl border-2 bg-white overflow-hidden card-lift flex flex-col" style="border-color:var(--line); min-height:120px;" tabindex="0" role="button" aria-label="View ${p.name} details" data-logo="${p.logo}" data-name="${p.name}">
+    <div class="logo-wrap">
+      <img src="${p.logo}" loading="lazy" alt="${p.name} logo" class="max-h-full max-w-full object-contain">
+    </div>
+    <div class="px-3 py-3 flex items-center justify-start gap-2 flex-1" style="border-top:1px solid var(--line);">
+      <span class="brand-badge" style="background:rgba(22,163,74,.1); color:var(--green);">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <span class="badge-text">Authorized</span>
+      </span>
+    </div>
+  </div>`).join('');
+
+document.getElementById('associated-partners').innerHTML = associatedPartners.map(p=>`
+  <div class="brand-chip rounded-2xl border-2 bg-white overflow-hidden card-lift flex flex-col" style="border-color:var(--line); min-height:120px;" tabindex="0" role="button" aria-label="View ${p.name} details" data-logo="${p.logo}" data-name="${p.name}">
+    <div class="logo-wrap">
+      <img src="${p.logo}" loading="lazy" alt="${p.name} logo" class="max-h-full max-w-full object-contain">
+    </div>
+    <div class="px-3 py-3 flex items-center justify-start gap-2 flex-1" style="border-top:1px solid var(--line);">
+      <span class="brand-badge" style="background:rgba(22,163,74,.1); color:var(--green);">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <span class="badge-text">Associated</span>
+      </span>
+    </div>
+  </div>`).join('');
+
+const categoryGrid = document.getElementById('category-grid');
+if (categoryGrid) {
+  categoryGrid.innerHTML = categories.map(c=>`
+    <div class="reveal rounded-2xl bg-white p-7 border card-lift" style="border-color:var(--line);">
+      <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-5" style="background:rgba(198,40,40,.08);">
+        ${iconSvg(c.icon,'var(--red)')}
+      </div>
+      <h3 class="font-display font-semibold text-lg" style="color:var(--navy);">${c.name}</h3>
+      <p class="text-[13.5px] mt-2 leading-relaxed" style="color:#64748B;">${c.desc}</p>
+      <a href="#contact" class="inline-flex items-center gap-1.5 mt-4 text-[13.5px] font-semibold" style="color:var(--red);">Explore <span aria-hidden="true">→</span></a>
+    </div>`).join('');
+}
+
+document.getElementById('services-grid').innerHTML = services.map(s=>`
+  <div class="reveal rounded-2xl p-7" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);">
+    <div class="tri-bullet mb-4"></div>
+    <h3 class="font-display font-semibold text-lg text-white">${s.title}</h3>
+    <p class="text-[13.5px] mt-2 text-white/55 leading-relaxed">${s.desc}</p>
+  </div>`).join('');
+
+document.getElementById('why-grid').innerHTML = whyUs.map(w=>`
+  <div class="reveal flex gap-4">
+    <svg class="shrink-0 mt-1" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>
+    <div>
+      <h3 class="font-display font-semibold text-[16px]" style="color:var(--navy);">${w.title}</h3>
+      <p class="text-[13.5px] mt-1.5 leading-relaxed" style="color:#64748B;">${w.desc}</p>
+    </div>
+  </div>`).join('');
+
+document.getElementById('industries-grid').innerHTML = industries.map(i=>`
+  <div class="reveal flex items-center gap-4 rounded-xl bg-white p-6 border card-lift" style="border-color:var(--line);">
+    <div class="w-11 h-11 rounded-lg flex items-center justify-center shrink-0" style="background:rgba(21,101,192,.08);">
+      ${iconSvg(i.icon,'var(--blue)')}
+    </div>
+    <span class="font-display font-medium text-[15px]" style="color:var(--navy);">${i.name}</span>
+  </div>`).join('');
+
+// ---- Featured Products: interactive category tabs + carousel ----
+function renderProductGrid(key){
+  const grid = document.getElementById('featured-grid');
+  const tab = productTabs.find(t=>t.key===key);
+  const productImageMap = {
+    'LT Switchgear': 'product categories/LT switch gear.jpeg',
+    'ACB': 'product categories/ACB.jpeg',
+    'MCCB': 'product categories/Mccb.jpeg',
+    'MCB': 'product categories/MCB.png',
+    'Distribution Boards': 'product categories/DB.png',
+    'Control Panels': 'product categories/Control panel.jpeg',
+    'APFC Panels': 'product categories/APFC Panels.png',
+    'Changeover Switches': 'product categories/Changeover Switches.png',
+    'Contactors & Relays': 'product categories/Contactors & Relays.png',
+    'Motor Control Centers': 'product categories/MotorControl Centers.jpg',
+    'Surge Protection Device': 'product categories/Surge Protection Device.jpeg',
+    'MCCB & Fuse Units': 'product categories/MCCB & Fuse Units.jpeg',
+    'Protection Relays': 'product categories/Protection Relays.jpeg',
+    'House Wire': 'product categories/House Wire.jpg',
+    'Armoured Cable': 'product categories/Armoured Cable.jpg',
+    'Flexible Copper Cable': 'product categories/Flexible Copper Cable.jpg',
+    'Control Cable': 'product categories/Control Cable.jpeg',
+    'Digital Energy Meter': 'product categories/Digital Energy Meter.jpeg',
+    'Power Quality Analyzer': 'product categories/Power Quality Analyzer.png',
+    'LED Panel Light': 'product categories/LED Panel Light.jpeg',
+    'LED Street Light': 'product categories/LED Street Light.jpg',
+    'LED Flood Light': 'product categories/LED Flood Light.jpeg',
+    'Industrial High Bay Light': 'product categories/Industrial High Bay Light',
+    'Ceiling Fan': 'product categories/Ceiling Fan.jpg',
+    'Exhaust Fan': 'product categories/Exhaust Fan.jpg',
+    'Wall Fan': 'product categories/Wall Fan.jpg',
+    'Water Heater': 'product categories/Water Heater.jpg',
+    'Modular Switch Range': 'product categories/Modular Switch Range.jpg',
+    'Sockets & Plates': 'product categories/Modular Switch Range.jpg',
+    'PVC Conduits & Fittings': 'product categories/Control Cable.jpeg',
+    'Cable Ties & Glands': 'product categories/Control Cable.jpeg',
+    'Industrial Sensors': 'product categories/Industrial Sensors.jpg',
+    'Motor Drives': 'product categories/MotorControl Centers.jpg'
+  };
+  grid.style.opacity = 0;
+  setTimeout(()=>{
+    if(!productData[key] || !productData[key].length){
+      grid.innerHTML = `<div class="rounded-2xl bg-white border p-8" style="border-color:var(--line);">No products available for ${tab?tab.label:key}.</div>`;
+      grid.style.opacity = 1;
+      document.getElementById('product-tab-desc').textContent = tab? tab.desc : '';
+      return;
+    }
+    document.getElementById('product-tab-desc').textContent = tab? tab.desc : '';
+    grid.innerHTML = productData[key].map(f=>{
+      const imageSrc = productImageMap[f.name] || '';
+      return `
+      <div class="rounded-2xl bg-white border card-lift overflow-hidden shrink-0" style="border-color:var(--line); width:250px; scroll-snap-align:start;">
+        <div class="h-28 flex items-center justify-center" style="background:linear-gradient(135deg,var(--ice),#EEF2F7);">
+          ${imageSrc ? `<img src="${imageSrc}" alt="${f.name}" style="max-width:78%; max-height:72%; object-fit:contain; display:block;">` : iconSvg(f.icon,'var(--red)')}
+        </div>
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-[15px] mt-2" style="color:var(--navy);">${f.name}</h3>
+          <p class="text-[12.5px] mt-1.5 leading-relaxed" style="color:#64748B;">${f.desc}</p>
+          <a href="#contact" class="text-[13px] font-semibold mt-3 inline-block" style="color:var(--red);">Explore →</a>
+        </div>
+      </div>`;
+    }).join('');
+    grid.scrollTo({left:0});
+    grid.style.opacity = 1;
+  }, 200);
+  document.getElementById('product-tab-desc').textContent = tab.desc;
+}
+
+function setActiveProductTab(key){
+  document.querySelectorAll('.product-tab-btn').forEach(b=>{
+    b.classList.toggle('active', b.dataset.key===key);
+  });
+  renderProductGrid(key);
+}
+
+// When a product tab is activated, ensure the Product Categories section
+// appears immediately below the Featured Products section so users see
+// categories after the featured items.
+const moveCategoriesBelowFeatured = ()=>{
+  try{
+    const tabsEl = document.getElementById('product-tabs');
+    const categoriesEl = document.getElementById('categories');
+    if(!tabsEl || !categoriesEl) return;
+    const featuredSection = tabsEl.closest('section');
+    if(featuredSection && featuredSection.nextElementSibling !== categoriesEl){
+      featuredSection.parentNode.insertBefore(categoriesEl, featuredSection.nextSibling);
+    }
+  }catch(e){ console.warn('moveCategoriesBelowFeatured failed', e); }
+};
+
+// Hook into tab activation to move categories into place
+const originalSetActiveProductTab = setActiveProductTab;
+setActiveProductTab = function(key){
+  originalSetActiveProductTab(key);
+  moveCategoriesBelowFeatured();
+};
+
+document.getElementById('carousel-prev').addEventListener('click', ()=>{
+  document.getElementById('featured-grid').scrollBy({left:-266, behavior:'smooth'});
+});
+document.getElementById('carousel-next').addEventListener('click', ()=>{
+  const fg = document.getElementById('featured-grid');
+  if(fg) fg.scrollBy({left:266, behavior:'smooth'});
+});
+
+// Initialize product tabs and grid defensively so failures earlier in the script
+// don't leave the section blank. This logs errors and shows a fallback UI.
+function moveFeaturedAfterBrands(){
+  try{
+    const brands = document.getElementById('brands');
+    const featured = document.getElementById('featured-products');
+    if(!brands || !featured) return;
+    if(brands.nextElementSibling !== featured){
+      brands.parentNode.insertBefore(featured, brands.nextSibling);
+    }
+  }catch(e){ console.warn('moveFeaturedAfterBrands failed', e); }
+}
+
+(function initProductTabs(){
+  try{
+    const tabsContainer = document.getElementById('product-tabs');
+    if(!tabsContainer) { console.warn('product-tabs container missing'); return; }
+
+    console.debug('Initializing product tabs — count:', productTabs.length);
+    // ensure a featured grid exists (some templates strip it); create if missing
+    let grid = document.getElementById('featured-grid');
+    if(!grid){
+      tabsContainer.insertAdjacentHTML('afterend', '<div id="featured-grid" class="flex gap-6 overflow-x-auto pb-3 product-grid-transition" style="scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;"></div>');
+      grid = document.getElementById('featured-grid');
+    }
+
+    tabsContainer.innerHTML = productTabs.map((t,i)=>`
+      <button type="button" class="product-tab-btn${i===0? ' active' : ''}" data-key="${t.key}">
+        ${t.label}
+      </button>`).join('');
+
+    document.querySelectorAll('.product-tab-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=> setActiveProductTab(btn.dataset.key));
+    });
+
+    // activate the first tab (if any) after a short tick to allow CSS render
+    if(productTabs.length) setTimeout(()=> setActiveProductTab(productTabs[0].key), 20);
+
+    // ensure featured appears after brands on load
+    moveFeaturedAfterBrands();
+
+    // when clicking any Products link (anchors targeting #categories), open featured instead
+    document.querySelectorAll('a[href="#categories"], a.nav-link[data-section="categories"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const featured = document.getElementById('featured-products');
+        if(featured){
+          featured.scrollIntoView({behavior:'smooth', block:'start'});
+          if(productTabs.length) setActiveProductTab(productTabs[0].key);
+          // also ensure categories are positioned below featured
+          moveCategoriesBelowFeatured();
+        } else {
+          // fallback: scroll to categories section
+          const cat = document.getElementById('categories');
+          if(cat) cat.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+
+  } catch(err){
+    console.error('Error initializing product tabs:', err);
+    const tabsContainer = document.getElementById('product-tabs');
+    if(tabsContainer) tabsContainer.innerHTML = '<div style="color:#b91c1c; padding:12px;">Unable to load product tabs — check console for details.</div>';
+  }
+})();
+
+document.getElementById('reviews-grid').innerHTML = reviews.map(r=>`
+  <div class="reveal rounded-2xl bg-white p-7 border" style="border-color:var(--line);">
+    <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+    <p class="text-[14.5px] leading-relaxed" style="color:var(--ink);">"${r.text}"</p>
+    <div class="mt-5 font-semibold text-[14px]" style="color:var(--navy);">${r.name}</div>
+    <div class="text-[12.5px]" style="color:#64748B;">${r.role}</div>
+  </div>`).join('');
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ---------- header scroll state ----------
+const header = document.getElementById('site-header');
+function onScroll(){
+  if(window.scrollY > 30){
+    header.style.background = '#FFFFFF';
+    header.style.backdropFilter = 'blur(10px)';
+    header.style.boxShadow = '0 8px 30px -12px rgba(15,23,42,.12)';
+  } else {
+    header.style.background = '#FFFFFF';
+    header.style.boxShadow = '0 1px 0 rgba(15,23,42,.08)';
+  }
+}
+document.addEventListener('scroll', onScroll);
+onScroll();
+
+// header nav link + phone color follow (white over hero, dark once solid nav still dark navy anyway)
+document.querySelectorAll('#desktop-nav a, #header-phone').forEach(el=>el.style.color = 'rgba(255,255,255,.85)');
+
+// ---------- mobile menu ----------
+const menuBtn = document.getElementById('mobile-menu-btn');
+const mobileNav = document.getElementById('mobile-nav');
+menuBtn.addEventListener('click', ()=>{
+  mobileNav.classList.toggle('hidden');
+});
+mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>mobileNav.classList.add('hidden')));
+
+// ---------- scroll reveal ----------
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('in-view');
+      io.unobserve(entry.target);
+    }
+  });
+}, {threshold:.15});
+revealEls.forEach(el=>io.observe(el));
+
+// ---------- animated counters ----------
+const counters = document.querySelectorAll('.counter-num');
+const counterIO = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const el = entry.target;
+      const target = parseInt(el.dataset.target, 10);
+      const suffix = el.dataset.suffix || '';
+      let start = 0;
+      const duration = 1400;
+      const startTime = performance.now();
+      function tick(now){
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1-progress, 3);
+        el.textContent = Math.floor(eased * target) + suffix;
+        if(progress < 1) requestAnimationFrame(tick);
+        else el.textContent = target + suffix;
+      }
+      requestAnimationFrame(tick);
+      counterIO.unobserve(el);
+    }
+  });
+}, {threshold:.5});
+counters.forEach(c=>counterIO.observe(c));
+
+// ---------- brand card interactions (lightbox modal + keyboard accessibility) ----------
+function bindBrandCards(){
+  const cards = document.querySelectorAll('.brand-chip');
+  const modal = document.getElementById('brand-modal');
+  const modalImg = modal && modal.querySelector('img');
+  const modalTitle = modal && modal.querySelector('h3');
+
+  function openModal(card){
+    const logo = card.dataset.logo;
+    const name = card.dataset.name;
+    if(modalImg) modalImg.src = logo;
+    if(modalTitle) modalTitle.textContent = name;
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+    // focus close button
+    const closeBtn = modal.querySelector('.modal-close');
+    if(closeBtn) closeBtn.focus();
+  }
+
+  function closeModal(){
+    if(modalImg) modalImg.src = '';
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  cards.forEach(card=>{
+    card.addEventListener('click', ()=> openModal(card));
+    card.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openModal(card); }
+    });
+  });
+
+  if(modal){
+    modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+    const close = modal.querySelector('.modal-close');
+    if(close) close.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && modal.classList.contains('show')) closeModal(); });
+  }
+}
+
+// Bind after a small delay to ensure DOM injection finished
+setTimeout(bindBrandCards, 120);
+</script>
+<!-- brand modal -->
+<div id="brand-modal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-label="Brand details">
+    <button class="modal-close" aria-label="Close">✕</button>
+    <img src="" alt="brand logo">
+    <h3></h3>
+    <p style="text-align:center;color:#64748B;margin:0;">Click outside or press ESC to close</p>
+  </div>
+</div>
+</body>
+</html>
