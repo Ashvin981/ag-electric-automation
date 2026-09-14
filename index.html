@@ -732,6 +732,53 @@
   }
 }
 
+
+/* MOBILE ONLY: prevent fixed header from covering hero content */
+@media (max-width:1023px){
+  /* Keep the first hero text completely below the fixed mobile header. */
+  #home{
+    padding-top:10.5rem !important;
+  }
+}
+@media (max-width:767px){
+  #home{
+    padding-top:10rem !important;
+  }
+}
+@media (max-width:420px){
+  #home{
+    padding-top:9.5rem !important;
+  }
+}
+
+
+/* FINAL MOBILE HERO POSITION FIX — only affects the first section */
+@media (max-width:1023px){
+  #home{
+    padding-top:2rem !important;
+  }
+
+  /* Explicitly move the complete hero content below the fixed header.
+     This avoids relying on section padding that can be affected by the
+     existing Tailwind/desktop rules. */
+  #home > .max-w-7xl{
+    position:relative !important;
+    margin-top:5rem !important;
+  }
+}
+
+@media (max-width:767px){
+  #home > .max-w-7xl{
+    margin-top:4.5rem !important;
+  }
+}
+
+@media (max-width:420px){
+  #home > .max-w-7xl{
+    margin-top:4rem !important;
+  }
+}
+
 </style>
 </head>
 <body class="bg-white antialiased">
