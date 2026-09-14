@@ -610,6 +610,128 @@
   }
 }
 
+
+/* FINAL FIX: prevent mobile hero content from being clipped or broken */
+@media (max-width:1023px){
+  /* The desktop diagonal shape was cutting off the lower hero content. */
+  #home.diagonal-cut{
+    clip-path:none !important;
+    height:auto !important;
+    min-height:0 !important;
+    padding-bottom:4rem !important;
+  }
+
+  /* Remove the desktop upward offset from the information card. */
+  #home > .max-w-7xl > .lg\:col-span-5{
+    transform:none !important;
+    margin-top:2rem !important;
+    width:100% !important;
+  }
+
+  #home > .max-w-7xl > .lg\:col-span-7,
+  #home > .max-w-7xl > .lg\:col-span-5{
+    min-width:0 !important;
+    max-width:100% !important;
+  }
+
+  /* Hero text must wrap naturally within the phone viewport. */
+  #home .hero-eyebrow{
+    white-space:normal !important;
+    overflow:visible !important;
+    word-break:normal !important;
+    overflow-wrap:anywhere !important;
+  }
+
+  #home .hero-heading,
+  #home .hero-copy{
+    white-space:normal !important;
+    overflow:visible !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+    max-width:100% !important;
+  }
+
+  /* Keep every line inside the feature card. */
+  #home .hero-info-card{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    box-sizing:border-box !important;
+    overflow:visible !important;
+  }
+
+  #home .hero-info-list{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  #home .hero-info-list li{
+    display:flex !important;
+    align-items:flex-start !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    box-sizing:border-box !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    overflow-wrap:anywhere !important;
+    word-break:normal !important;
+    line-height:1.55 !important;
+  }
+
+  #home .hero-info-list li svg{
+    flex:0 0 18px !important;
+    margin-top:.25rem !important;
+  }
+
+  #home .hero-info-list li{
+    gap:.75rem !important;
+  }
+
+  /* Do not let the decorative shape create a clipping boundary. */
+  #home .hero-decoration{
+    pointer-events:none !important;
+  }
+
+  /* Trust strip also wraps instead of running outside the phone width. */
+  .trust-strip{
+    flex-wrap:wrap !important;
+    justify-content:center !important;
+    width:100% !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+    padding-left:1rem !important;
+    padding-right:1rem !important;
+    overflow:visible !important;
+  }
+
+  .trust-strip-item{
+    white-space:normal !important;
+    text-align:center !important;
+    max-width:100% !important;
+  }
+}
+
+@media (max-width:767px){
+  #home.diagonal-cut{
+    padding-top:3.5rem !important;
+    padding-bottom:3.5rem !important;
+  }
+
+  #home .hero-info-card{
+    padding:1.25rem !important;
+  }
+
+  #home .hero-info-list{
+    font-size:14px !important;
+  }
+
+  #home .hero-info-list li{
+    line-height:1.5 !important;
+  }
+}
+
 </style>
 </head>
 <body class="bg-white antialiased">
