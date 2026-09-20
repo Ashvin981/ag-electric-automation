@@ -22,7 +22,8 @@
     --green:#16A34A;
     --white:#FFFFFF;
   }
-  *{scroll-behavior:smooth;}
+  html { scroll-behavior: auto; }
+  *{scroll-behavior:auto;}
   body{font-family:'Inter',sans-serif; color:var(--ink); background:var(--white); overflow-x:hidden;}
   h1,h2,h3,h4,.font-display{font-family:'Poppins',sans-serif;}
   .eyebrow{font-family:'Inter',sans-serif; letter-spacing:.18em; text-transform:uppercase; font-size:.8rem; font-weight:600;}
@@ -2086,11 +2087,12 @@ function renderProductGrid(key){
   document.getElementById('product-tab-desc').textContent = tab ? tab.desc : '';
 }
 
-function setActiveProductTab(key){
+function setActiveProductTab(key, options = {}){
+  const { autoScroll = false } = options;
   document.querySelectorAll('.product-tab-btn').forEach(b=>{
     const active = b.dataset.key===key;
     b.classList.toggle('active', active);
-    if(active) b.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+    if(active && autoScroll) b.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
   });
   renderProductGrid(key);
 }
@@ -2181,11 +2183,12 @@ function moveFeaturedAfterBrands(){
     document.querySelectorAll('.product-tab-btn').forEach(btn=>{
       btn.addEventListener('click', ()=> {
         document.querySelectorAll('.product-tab-btn').forEach(b=>b.setAttribute('aria-pressed', b===btn ? 'true' : 'false'));
-        setActiveProductTab(btn.dataset.key);
+        setActiveProductTab(btn.dataset.key, { autoScroll: true });
       });
     });
 
     // activate the first tab (if any) after a short tick to allow CSS render
+    // without auto-scrolling the page when the site first loads.
     if(productTabs.length) setTimeout(()=> setActiveProductTab(productTabs[0].key), 20);
 
     // ensure featured appears after brands on load
@@ -2225,6 +2228,8 @@ document.getElementById('reviews-grid').innerHTML = reviews.map(r=>`
   </div>`).join('');
 
 document.getElementById('year').textContent = new Date().getFullYear();
+window.history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
 
 // ---------- header scroll state ----------
 const header = document.getElementById('site-header');
